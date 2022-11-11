@@ -77,7 +77,15 @@ simd-accel = ["grep/simd-accel"]
 pcre2 = ["grep/pcre2"]
 
 [profile.release]
-debug = 1
+debug = 0
+debug-assertions = false
+overflow-checks = false
+opt-level = 3
+panic = "abort"
+incremental = true
+codegen-units = 1
+strip = true
+lto = true
 
 [package.metadata.deb]
 features = ["pcre2"]
