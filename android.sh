@@ -1,18 +1,22 @@
 #!/usr/bin/env bash
 
-DIR=$(cd "$(dirname "$0")"; pwd)
+DIR=$(
+  cd "$(dirname "$0")"
+  pwd
+)
 set -ex
 cd $DIR
 
+rustup +nightly target add aarch64-linux-android
 #export NDK=$DIR/../android-ndk-r21e
 
 export API=30
 
-export NDK_VERSION=22.1.7171670
+export NDK_VERSION=24.0.8215888
 
 export TARGET=aarch64-linux-android
 
-export os=`uname -s|awk '{ print tolower($0) }'`
+export os=$(uname -s | awk '{ print tolower($0) }')
 export NDK=$HOME/Library/Android/sdk/ndk/$NDK_VERSION
 export ANDROID_NDK_HOME=$NDK
 export TOOLCHAIN=$NDK/toolchains/llvm/prebuilt/$os-x86_64
@@ -36,14 +40,10 @@ echo 'LD = '$LD
 echo 'RANLIB = '$RANLIB
 echo 'STRIP = '$STRIP
 
-
 #V8_FROM_SOURCE=1
 #GN_ARGS='target_os="android" target_cpu="arm"'
 #RUSTFLAGS="-C target-feature=+aes" \
 
 #RUSTFLAGS="-Clink-arg=-Wl,--allow-multiple-definition" \
 RUST_BACKTRACE=1 \
-cargo +nightly build --release --target aarch64-linux-android
-
-
-
+  cargo +nightly build --release --target aarch64-linux-android
