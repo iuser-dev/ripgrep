@@ -47,3 +47,5 @@ echo 'STRIP = '$STRIP
 #RUSTFLAGS="-Clink-arg=-Wl,--allow-multiple-definition" \
 RUST_BACKTRACE=1 \
   cargo +nightly build --release --target aarch64-linux-android
+
+ls -alh ./target/aarch64-linux-android/release/rg
