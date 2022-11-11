@@ -20,17 +20,17 @@ name = "globset"
 bench = false
 
 [dependencies]
-aho-corasick = "0.7.3"
-bstr = { version = "0.2.0", default-features = false, features = ["std"] }
-fnv = "1.0.6"
-log = { version = "0.4.5", optional = true }
-regex = { version = "1.1.5", default-features = false, features = ["perf", "std"] }
-serde = { version = "1.0.104", optional = true }
+aho-corasick = "0.7.19"
+bstr = { version = "0.2.17", default-features = false, features = ["std"] }
+fnv = "1.0.7"
+log = { version = "0.4.17", optional = true }
+regex = { version = "1.7.0", default-features = false, features = ["perf", "std"] }
+serde = { version = "1.0.147", optional = true }
 
 [dev-dependencies]
 glob = "0.3.0"
 lazy_static = "1"
-serde_json = "1.0.45"
+serde_json = "1.0.87"
 
 [features]
 default = ["log"]

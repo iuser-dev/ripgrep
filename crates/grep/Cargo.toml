@@ -22,8 +22,8 @@ grep-regex = { version = "0.1.10", path = "../regex" }
 grep-searcher = { version = "0.1.10", path = "../searcher" }
 
 [dev-dependencies]
-termcolor = "1.0.4"
-walkdir = "2.2.7"
+termcolor = "1.1.3"
+walkdir = "2.3.2"
 
 [features]
 simd-accel = ["grep-searcher/simd-accel"]

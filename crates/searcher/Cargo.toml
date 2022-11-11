@@ -14,17 +14,17 @@ license = "Unlicense OR MIT"
 edition = "2018"
 
 [dependencies]
-bstr = { version = "0.2.0", default-features = false, features = ["std"] }
+bstr = { version = "0.2.17", default-features = false, features = ["std"] }
 bytecount = "0.6"
-encoding_rs = "0.8.14"
-encoding_rs_io = "0.1.6"
+encoding_rs = "0.8.31"
+encoding_rs_io = "0.1.7"
 grep-matcher = { version = "0.1.5", path = "../matcher" }
-log = "0.4.5"
-memmap = { package = "memmap2", version = "0.5.3" }
+log = "0.4.17"
+memmap = { package = "memmap2", version = "0.5.8" }
 
 [dev-dependencies]
 grep-regex = { version = "0.1.10", path = "../regex" }
-regex = "1.1"
+regex = "1.7"
 
 [features]
 default = ["bytecount/runtime-dispatch-simd"]
